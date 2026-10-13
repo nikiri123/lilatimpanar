@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Lila Timpanar</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;1,400&display=swap');
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* Encabezado fijo */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      padding: 10px 12px;
+      box-sizing: border-box;
+      font-family: 'Alegreya Sans', sans-serif;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    .brand {
+      color: #00FF00;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.2s ease;
+    }
+
+    nav {
+      display: flex;
+      gap: 12px;
+    }
+
+    nav a {
+      color: #00FF00;
+      text-decoration: none;
+      text-transform: lowercase;
+      transition: opacity 0.2s ease;
+    }
+
+    nav a:hover, .brand:hover {
+      opacity: 0.7;
+    }
+
+    /* Imagen principal de fondo */
+    .hero-section {
+      height: 100vh;
+      width: 100%;
+      background-image: url('https://lh3.googleusercontent.com/d/1ubI-wdfCUzUjskBFKGCStoEKqeIvO10f');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+    /* Sección Bio */
+    .bio-section {
+      background-color: #F2F2F2;
+      padding: 40px 20px 40px 20px;
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+    }
+
+    .bio-container {
+      max-width: 550px;
+      width: 100%;
+    }
+
+    .separator-line {
+      border: none;
+      border-top: 1px solid #00FF00;
+      margin-bottom: 25px;
+      width: 100%;
+    }
+
+    .bio-text {
+      font-family: 'Alegreya Sans', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      color: #000000;
+      line-height: 1.5;
+      text-align: left;
+    }
+
+    .bio-text p {
+      margin-bottom: 18px;
+    }
+
+    .bio-text a {
+      color: #C0262D;
+      text-decoration: underline;
+      transition: color 0.2s ease;
+    }
+
+    .bio-text a:hover {
+      color: #00FF00;
+    }
+
+    /* Imagen divisora */
+    .divider-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0;
+      padding: 0;
+      object-fit: cover;
+    }
+
+    /* Sección Archivo */
+    .archive-section {
+      position: relative;
+      overflow: hidden;
+      background-color: #F2F2F2;
+      padding: 50px 20px 80px 20px;
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .archive-container {
+      max-width: 550px;
+      width: 100%;
+      position: relative;
+      z-index: 2;
+    }
+
+    .archive-title {
+      font-family: 'Alegreya Sans', sans-serif;
+      font-weight: 400;
+      font-size: 17px;
+      color: #B30033;
+      margin-bottom: 25px;
+      text-transform: lowercase;
+    }
+
+    .archive-links {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .archive-links a {
+      font-family: 'Alegreya Sans', sans-serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 18px;
+      color: #B30033;
+      text-decoration: underline;
+      text-transform: uppercase;
+      word-break: break-word;
+      transition: color 0.2s ease;
+    }
+
+    .archive-links a:hover {
+      color: #00FF00;
+    }
+
+    /* Estilo de las figuras */
+    .geo-shape {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border: 1.5px solid #00FF00;
+      background: rgba(0, 255, 0, 0.08);
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+      pointer-events: none;
+      z-index: 1;
+      will-change: transform, width, height, border-radius;
+      transition: width 0.35s cubic-bezier(0.25, 1, 0.5, 1), 
+                  height 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    @media (max-width: 480px) {
+      header { padding: 8px 10px; }
+      .bio-section { padding: 30px 15px 30px 15px; }
+      .archive-section { padding: 40px 15px 60px 15px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Encabezado fijo -->
+  <header>
+    <a href="#" class="brand">LILA TIMPANAR</a>
+    <nav>
+      <a href="#bio">bio.</a>
+      <a href="#archivo">archivo</a>
+    </nav>
+  </header>
+
+  <!-- Imagen principal de fondo -->
+  <section class="hero-section"></section>
+
+  <!-- Sección Bio -->
+  <section id="bio" class="bio-section">
+    <div class="bio-container">
+      <hr class="separator-line">
+      <div class="bio-text">
+        <p>lila timpanar (Mendoza, Argentina). Hartista travesti, performer, escritora y bailarina. Su práctica indaga entre el sinsentido, la deformación, de-generación y per-versión de la danza como disciplina en la que se ha formado.</p>
+
+        <p>Su práctica compone un cruce entre la escritura y la improvisación como umbrales desde donde provoca atravesamientos que parten desde la fantasía y lo ocurrente. la identidad y el paso del tiempo. lo poético y el cringe.</p>
+
+        <p>Su primera investigación como solista, SEIDA RETIDA, fue presentada por primera vez en 2025 en Buenos Aires, Argentina, y en la provincia de Córdoba en el mismo año.<br>
+        Este performance relaciona la polifonía travesti con la biografía de la performer. Utiliza elementos del género epistolar y la autoficción. A su vez, esboza una crítica a la industria farmacéutica que le provee las hormonas para su feminización, de la que paradójicamente se hace y conforma su neo-cuerpo.</p>
+
+        <p>Hace parte del colectivo performático Revuelto conjuntivo, compuesto por Aris Chicco, Saluminé Finós y Yos.</p>
+
+        <p>Además es colaboradora de la revista <a href="https://Cuadernosdedanza.com" target="_blank">Cuadernosdedanza.com</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Imagen divisora -->
+  <img src="divider.jpg" class="divider-img" alt="Divisor">
+
+  <!-- Sección Archivo -->
+  <section id="archivo" class="archive-section">
+    <div class="geo-shape" id="shape1"></div>
+    <div class="geo-shape" id="shape2"></div>
+    <div class="geo-shape" id="shape3"></div>
+
+    <div class="archive-container">
+      <h2 class="archive-title">archivo:</h2>
+      <div class="archive-links">
+        <a href="#">ANGELS IN MEXICO CITY X ROCIO CHACON</a>
+        <a href="#">CAMPAÑA PRIDE MX 2026</a>
+        <a href="#">CAMPER 2026</a>
+        <a href="#">DAJU UNAM</a>
+        <a href="#">DANZA TRANS 2026</a>
+        <a href="#">DESDE Y HACIA EL PISO</a>
+        <a href="#">ETERNO 2026</a>
+        <a href="#">SUPER FAN 2026</a>
+        <a href="#">OLA DE CALOR - OLA DE COLOR</a>
+        <a href="#">REVUELTO CONJUNTIVO 2025</a>
+        <a href="#">SEIDA RETIDA 2025 CABA</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Script para alternar únicamente entre Círculo Perfecto y Elipse Horizontal -->
+  <script>
+    const section = document.getElementById('archivo');
+
+    // Catálogo únicamente de círculos perfectos y elipses horizontales
+    const geoShapes = [
+      { w: 110, h: 110, br: "50%" }, // Círculo perfecto estándar
+      { w: 160, h: 70,  br: "50%" }, // Elipse horizontal estándar
+      { w: 135, h: 135, br: "50%" }, // Círculo perfecto grande
+      { w: 180, h: 80,  br: "50%" }, // Elipse horizontal ancha
+      { w: 90,  h: 90,  br: "50%" }, // Círculo perfecto chico
+      { w: 140, h: 60,  br: "50%" }  // Elipse horizontal estilizada
+    ];
+
+    const items = [
+      { el: document.getElementById('shape1'), x: 10,  y: 20,  vx: 0.45, vy: 0.35, w: 110, h: 110, shapeIdx: 0 },
+      { el: document.getElementById('shape2'), x: 180, y: 150, vx: -0.35, vy: 0.5,  w: 160, h: 70,  shapeIdx: 1 },
+      { el: document.getElementById('shape3'), x: 80,  y: 350, vx: 0.5,  vy: -0.4, w: 135, h: 135, shapeIdx: 2 }
+    ];
+
+    items.forEach(item => updateShape(item));
+
+    function updateShape(item) {
+      const s = geoShapes[item.shapeIdx];
+      item.w = s.w;
+      item.h = s.h;
+      item.el.style.width = `${s.w}px`;
+      item.el.style.height = `${s.h}px`;
+      item.el.style.borderRadius = s.br;
+    }
+
+    function morphGeometric(item) {
+      let nextIdx;
+      do {
+        nextIdx = Math.floor(Math.random() * geoShapes.length);
+      } while (nextIdx === item.shapeIdx);
+      
+      item.shapeIdx = nextIdx;
+      updateShape(item);
+    }
+
+    function animate() {
+      const rect = section.getBoundingClientRect();
+      const boundsWidth = rect.width;
+      const boundsHeight = rect.height;
+
+      items.forEach(item => {
+        item.x += item.vx;
+        item.y += item.vy;
+
+        let hit = false;
+
+        if (item.x <= 0) {
+          item.x = 0;
+          item.vx *= -1;
+          hit = true;
+        } else if (item.x + item.w >= boundsWidth) {
+          item.x = boundsWidth - item.w;
+          item.vx *= -1;
+          hit = true;
+        }
+
+        if (item.y <= 0) {
+          item.y = 0;
+          item.vy *= -1;
+          hit = true;
+        } else if (item.y + item.h >= boundsHeight) {
+          item.y = boundsHeight - item.h;
+          item.vy *= -1;
+          hit = true;
+        }
+
+        if (hit) {
+          morphGeometric(item);
+        }
+
+        item.el.style.transform = `translate3d(${item.x}px, ${item.y}px, 0)`;
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    requestAnimationFrame(animate);
+  </script>
+
+</body>
+</html>
