@@ -143,30 +143,20 @@
       transform: scale(1.01);
     }
 
-    /* Marco para video de Instagram */
+    /* Contenedor del video de Instagram */
     .video-container {
       width: 100%;
-      max-width: 450px;
+      max-width: 400px;
       display: flex;
       justify-content: center;
     }
 
-    .instagram-card {
+    .instagram-embed {
       width: 100%;
-      background: #FFFFFF;
+      height: 500px;
       border: 1px solid #DDDDDD;
       border-radius: 4px;
-      padding: 15px;
-      text-align: center;
-      box-sizing: border-box;
-      font-family: 'Alegreya Sans', sans-serif;
-    }
-
-    .instagram-card a {
-      color: #B30033;
-      text-decoration: underline;
-      font-size: 14px;
-      font-weight: 500;
+      background-color: #FFFFFF;
     }
 
     /* Modal / Lightbox para ver fotos en grande */
@@ -213,6 +203,9 @@
       .project-section {
         padding: 50px 15px 50px 15px;
       }
+      .instagram-embed {
+        height: 460px;
+      }
     }
   </style>
 </head>
@@ -253,21 +246,25 @@
         #edición y montaje sonoro: @sxpf9</p>
       </div>
 
-      <!-- Fotos y Videos centrados y apilados -->
+      <!-- Fotos y Video de Instagram en reproductor directo -->
       <div class="media-gallery">
+
+        <!-- Reproductor incrustado de Instagram Reel -->
+        <div class="video-container">
+          <iframe 
+            class="instagram-embed" 
+            src="https://www.instagram.com/reel/DQH9dXPj7WI/embed/" 
+            frameborder="0" 
+            scrolling="no" 
+            allowtransparency="true" 
+            allow="encrypted-media">
+          </iframe>
+        </div>
 
         <!-- Fotos ampliables -->
         <img src="seida retida 2025 CABA/SEIDA01.jpg" alt="SEIDA RETIDA 01" onclick="openLightbox(this.src)">
         <img src="seida retida 2025 CABA/SEIDA02.jpg" alt="SEIDA RETIDA 02" onclick="openLightbox(this.src)">
         <img src="seida retida 2025 CABA/SEIDA03.jpg" alt="SEIDA RETIDA 03" onclick="openLightbox(this.src)">
-
-        <!-- Video de Instagram -->
-        <div class="video-container">
-          <div class="instagram-card">
-            <p style="margin: 0 0 8px 0; color: #555; font-size: 13px;">Registro en Video (Instagram Reel):</p>
-            <a href="https://www.instagram.com/reel/DQH9dXPj7WI/?stkn=MWhhdjgwcHg5Y3V6dg%3D%3D" target="_blank" rel="noopener"> Ver Reel de SEIDA RETIDA ↗</a>
-          </div>
-        </div>
 
       </div>
 
