@@ -13,6 +13,7 @@
       width: 100%;
       overflow-x: hidden;
       scroll-behavior: smooth;
+      background-color: #F2F2F2;
     }
 
     /* Encabezado fijo */
@@ -55,8 +56,7 @@
       opacity: 0.7;
     }
 
-    /* Imagen principal de fondo */
-/* Sección GIF principal: escala proporcionalmente sin recortes */
+    /* Sección GIF principal: escala proporcionalmente sin recortes */
     .hero-section {
       width: 100%;
       display: block;
@@ -71,7 +71,7 @@
       object-fit: contain;
     }
 
-    /* Sección Bio: */
+    /* Sección Bio: pegada inmediatamente debajo del GIF */
     .bio-section {
       background-color: #F2F2F2;
       padding: 15px 20px 40px 20px;
@@ -80,6 +80,7 @@
       display: flex;
       justify-content: center;
     }
+
     .bio-container {
       max-width: 550px;
       width: 100%;
@@ -88,7 +89,8 @@
     .separator-line {
       border: none;
       border-top: 1px solid #00FF00;
-      margin-bottom: 25px;
+      margin-top: 0;
+      margin-bottom: 20px;
       width: 100%;
     }
 
@@ -125,7 +127,7 @@
       object-fit: cover;
     }
 
-    /* Sección Archivo alineada a la izquierda */
+    /* Sección Archivo */
     .archive-section {
       position: relative;
       overflow: hidden;
@@ -145,7 +147,6 @@
       text-align: left;
     }
 
-    /* Títulos de Categoría Subrayados */
     .archive-category {
       margin-top: 25px;
       margin-bottom: 12px;
@@ -164,7 +165,6 @@
       gap: 6px;
     }
 
-    /* Ícono desplegable estilo MS Outlook */
     .outlook-icon {
       display: inline-block;
       width: 15px;
@@ -187,7 +187,6 @@
       border-top: 4px solid #B30033;
     }
 
-    /* Lista de elementos con ganchito de Outlook */
     .archive-list {
       display: flex;
       flex-direction: column;
@@ -203,7 +202,6 @@
       gap: 8px;
     }
 
-    /* Estilo vectorial para el ganchito/clip MS Outlook */
     .paperclip-icon {
       width: 15px;
       height: 15px;
@@ -226,13 +224,12 @@
       transition: color 0.2s ease;
     }
 
-    /* Hover en verde flúor para textos e íconos vectoriales */
     .archive-item:hover a,
     .archive-item:hover .paperclip-icon {
       color: #00FF00;
     }
 
-    /* Estilo de las figuras geométricas flotantes */
+    /* Figuras geométricas flotantes */
     .geo-shape {
       position: absolute;
       top: 0;
@@ -249,7 +246,7 @@
 
     @media (max-width: 480px) {
       header { padding: 8px 10px; }
-      .bio-section { padding: 30px 15px 30px 15px; }
+      .bio-section { padding: 10px 15px 30px 15px; }
       .archive-section { padding: 30px 15px 60px 15px; }
     }
   </style>
@@ -265,8 +262,10 @@
     </nav>
   </header>
 
-  <!-- Imagen principal de fondo -->
-  <section class="hero-section"></section>
+  <!-- Sección con el GIF completo -->
+  <section class="hero-section">
+    <img src="fondo.gif" class="hero-img" alt="Lila Timpanar">
+  </section>
 
   <!-- Sección Bio -->
   <section id="bio" class="bio-section">
