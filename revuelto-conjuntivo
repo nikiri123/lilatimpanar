@@ -98,35 +98,39 @@
       margin: 0;
     }
 
-    /* Texto informativo en gris */
-    .project-text {
-      font-family: 'Alegreya Sans', sans-serif;
-      font-weight: 400;
-      font-size: 12px;
-      color: #444444;
-      line-height: 1.5;
-      text-align: left;
-      margin-bottom: 25px;
-    }
-
-    .project-text p {
-      margin: 0 0 14px 0;
-    }
-
-    /* Subtítulo de obra con ícono de autito Segoe MDL2 Assets */
-    .subproject-title-wrapper {
+    /* Encabezados de proyectos / secciones */
+    .section-header-wrapper {
       display: flex;
       align-items: center;
       gap: 8px;
-      margin-top: 25px;
+      margin-top: 30px;
       margin-bottom: 12px;
     }
 
-    .car-icon {
+    .tag-icon {
       width: 18px;
       height: 18px;
       min-width: 18px;
       color: #B30033;
+    }
+
+    .section-header-title {
+      font-family: 'Alegreya Sans', sans-serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 17px;
+      color: #B30033;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    /* Subtítulos de obras */
+    .subproject-title-wrapper {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-top: 25px;
+      margin-bottom: 12px;
     }
 
     .subproject-title {
@@ -135,9 +139,45 @@
       font-weight: 500;
       font-size: 17px;
       color: #B30033;
-      text-decoration: underline;
       text-transform: uppercase;
       margin: 0;
+      line-height: 1.25;
+    }
+
+    /* Texto informativo en gris */
+    .project-text {
+      font-family: 'Alegreya Sans', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      color: #444444;
+      line-height: 1.5;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+
+    .project-text p {
+      margin: 0 0 14px 0;
+    }
+
+    .intro-paragraph-with-icon {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .car-icon {
+      width: 16px;
+      height: 16px;
+      min-width: 16px;
+      color: #000000;
+      margin-top: 2px;
+    }
+
+    .subtitle-label {
+      font-weight: 500;
+      margin-top: 12px;
+      display: block;
     }
 
     /* Galería vertical centrada */
@@ -147,6 +187,7 @@
       align-items: center;
       gap: 25px;
       margin-top: 20px;
+      margin-bottom: 30px;
       width: 100%;
     }
 
@@ -243,7 +284,7 @@
   <main class="project-section">
     <div class="project-container">
 
-      <!-- Título principal (18px) a la izquierda con ganchito MS Outlook -->
+      <!-- Título principal -->
       <div class="title-wrapper">
         <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
@@ -251,34 +292,77 @@
         <h1 class="project-title">REVUELTO CONJUNTIVO</h1>
       </div>
 
-      <!-- Texto informativo en gris -->
+      <!-- Texto introductorio del colectivo -->
       <div class="project-text">
-        <p>colectivo performático compuesto por Aris Chicco, Saluminé Finós, Yos y Lila Timpanar.</p>
+        <p>revuelto conjuntivo es un grupo con fines investigativos que articula métodos de creación con prácticas móviles-maleables entre performance, escritura, danza, baile y dibujo. Esta configuración como de-generadora de sentido que compone deformaciones semejantes a un ejercicio redundante, una receta, una desdanza, un principio de final.</p>
+        
+        <div class="intro-paragraph-with-icon">
+          <svg class="car-icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+          </svg>
+          <div>El revuelto se origina en el año 2024 y está conformado por aris chicco (Córdoba), julieta yos (Santa Fe), saluminé (Santa Fe), y lila timpanar (Mendoza).</div>
+        </div>
       </div>
 
-      <!-- Subtítulo de la obra con ícono de autito Segoe MDL2 Assets -->
-      <div class="subproject-title-wrapper">
-        <!-- Ícono del vehículo (Segoe MDL2 Assets \uE804) en SVG vectorial -->
-        <svg class="car-icon" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+      <!-- Sección PROYECTOS -->
+      <div class="section-header-wrapper">
+        <svg class="tag-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+          <line x1="7" y1="7" x2="7.01" y2="7"/>
         </svg>
-        <h2 class="subproject-title">ITINERARIO ERRANTE</h2>
+        <h2 class="section-header-title">PROYECTOS :</h2>
       </div>
 
-      <!-- Video primero y luego las imágenes ordenadas verticalmente -->
-      <div class="media-gallery">
+      <!-- Obra 1: ITINERARIO ERRANTE -->
+      <div class="subproject-title-wrapper">
+        <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
+        </svg>
+        <h3 class="subproject-title">ITINERARIO ERRANTE O EL MUNDO DE LAS ERRANCIAS</h3>
+      </div>
 
-        <!-- Video de Google Drive reproducible directo -->
+      <div class="project-text">
+        <p>CABA, 2025</p>
+        <span class="subtitle-label">sinopsis:-:</span>
+        <p>aparente aparato rastrea superficie posible. partiendo de un objeto más: localiza minúscula vertiente de piel, el lugar de simulacro. defectos suceden en el espacio delimitado torciendo el tiempo o al menos simulan hacerlo.-espacio-frecuencia situante construcción de-pendiente- su alianza temporal es frágil como objeto estampándose contra aparente aparato rasante. curva amortigua sus gestos, sus confusos gestos. re-componen, re-versan: desglosan descompuestas en un paisaje chirriante.la materia se dilata, delata el reservorio en deterioro. tal vez archivar la conversación bastaría, tal vez se dispersen como intento de final. j. e. r. s. se reunirán.</p>
+        
+        <span class="subtitle-label">asistencia técnica:-: @_lakapri__</span>
+      </div>
+
+      <!-- Galería de ITINERARIO ERRANTE (Video primero + 4 fotos) -->
+      <div class="media-gallery">
         <div class="video-container">
           <iframe src="https://drive.google.com/file/d/1QGfvfGHTbSAIyKjOTuzrTZUmQAqaqqX2/preview" allow="autoplay" allowfullscreen></iframe>
         </div>
 
-        <!-- Galería de imágenes en orden -->
         <img src="ITINERARIO_ERANTE/ITINERARIO01.JPG" alt="ITINERARIO ERRANTE 01" onclick="openLightbox(this.src)">
         <img src="ITINERARIO_ERANTE/ITINERARIO02.jpg" alt="ITINERARIO ERRANTE 02" onclick="openLightbox(this.src)">
         <img src="ITINERARIO_ERANTE/ITINERARIO03.jpg" alt="ITINERARIO ERRANTE 03" onclick="openLightbox(this.src)">
         <img src="ITINERARIO_ERANTE/ITINERARIO04.jpg" alt="ITINERARIO ERRANTE 04" onclick="openLightbox(this.src)">
+      </div>
 
+      <!-- Obra 2: TEXTURA DE UNA DISTANCIA -->
+      <div class="subproject-title-wrapper">
+        <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
+        </svg>
+        <h3 class="subproject-title">TEXTURA DE UNA DISTANCIA</h3>
+      </div>
+
+      <div class="project-text">
+        <p>CABA, 2025</p>
+        <span class="subtitle-label">sinopsis:-:</span>
+        <p>ángel de la guarda dulce compañía que la distancia con mi ami lo solucione la telepatia</p>
+
+        <p>com-ponemos un texturizado conjuntivo, que ambas bien sabemos que tarde o temprano se convertirá en uno de esos recuerdos nostálgicos que una ve y dice "que ganas de estar ahí de nuevo" entonces nos lanzamos así como quien de clavado se tira a la pileta a componer una textura del recuerdo, sin saberlo, hacia y para nuestro futuro aparentemente distal.</p>
+
+        <p>antes, meses antes, no tantos, junto a n y m inventariamos una receta del desdanzar, una cosa que no se sabe si es principio o final, un simple trailer o un precoz resumen.</p>
+
+        <p>entre el tiempo y la acción que perdura dentro de él, nos dirigimos hacia una óvalo para hacer lo que creemos saber hacer, subvertir el tiempo compartido (de) con esxs otrxs, y quedarnos en el filo de la filosofía, cavar un pozo, para dejar ahí todos los relojes del mundo, para reaprender a contar hasta ocho, como les enseñan a las bailarinas.</p>
+
+        <p>caminamos cuadras y cuadras hasta atrevernos a arriesgar un número que es el que dispondrá la cantidad de palabras que se dirán en toda la conversación, la temática es la muerte, por que no hay tiempo corrompido ni textura del recuerdo sin memoria.</p>
+
+        <p>archivo de video conjurado en noviembre de 2025, en el asfalto de buenos aires.</p>
       </div>
 
     </div>
