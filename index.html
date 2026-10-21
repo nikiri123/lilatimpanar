@@ -137,7 +137,7 @@
       width: 100%;
       position: relative;
       z-index: 2;
-      text-align: left; /* Todo alineado a la izquierda */
+      text-align: left;
     }
 
     /* Títulos de Categoría Subrayados */
@@ -182,7 +182,7 @@
       border-top: 4px solid #B30033;
     }
 
-    /* Lista de elementos con clip */
+    /* Lista de elementos con ganchito de Outlook */
     .archive-list {
       display: flex;
       flex-direction: column;
@@ -198,12 +198,13 @@
       gap: 8px;
     }
 
+    /* Estilo vectorial para el ganchito/clip MS Outlook */
     .paperclip-icon {
-      font-style: normal;
-      font-size: 16px;
+      width: 15px;
+      height: 15px;
+      min-width: 15px;
+      margin-top: 2px;
       color: #B30033;
-      line-height: 1;
-      user-select: none;
       transition: color 0.2s ease;
     }
 
@@ -220,7 +221,7 @@
       transition: color 0.2s ease;
     }
 
-    /* Efecto hover en verde flúor para textos e íconos */
+    /* Hover en verde flúor para textos e íconos vectoriales */
     .archive-item:hover a,
     .archive-item:hover .paperclip-icon {
       color: #00FF00;
@@ -297,9 +298,9 @@
         <div class="category-title"><span class="outlook-icon"></span> PROYECTOS</div>
       </div>
       <div class="archive-list">
-        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">SEIDA RETIDA</a></div>
-        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">REVUELTO CONJUNTIVO</a></div>
-        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">PUÑAL</a></div>
+        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><a href="#">SEIDA RETIDA</a></div>
+        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><a href="#">REVUELTO CONJUNTIVO</a></div>
+        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><a href="#">PUÑAL</a></div>
       </div>
 
       <!-- CLASES -->
@@ -307,8 +308,8 @@
         <div class="category-title"><span class="outlook-icon"></span> CLASES</div>
       </div>
       <div class="archive-list">
-        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">DESDE Y HACIA EL PISO</a></div>
-        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">ARCHIVOS QUE MUEVEN ESCRITURAS, ESCRITURAS QUE MUEVEN ARCHIVOS</a></div>
+        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><a href="#">DESDE Y HACIA EL PISO</a></div>
+        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><a href="#">ARCHIVOS QUE MUEVEN ESCRITURAS, ESCRITURAS QUE MUEVEN ARCHIVOS</a></div>
       </div>
 
       <!-- COLABORACIONES -->
@@ -316,137 +317,8 @@
         <div class="category-title"><span class="outlook-icon"></span> COLABORACIONES</div>
       </div>
       <div class="archive-list">
-        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">SUPER FAN</a></div>
-        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">CAMPER</a></div>
-        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">EVENTUALMENTE</a></div>
-        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">DANZA TRANS</a></div>
-        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">CAMPAÑA PRIDE</a></div>
-      </div>
-
-      <!-- PUBLICACIONES DE TEXTO -->
-      <div class="archive-category">
-        <div class="category-title"><span class="outlook-icon"></span> PUBLICACIONES DE TEXTO</div>
-      </div>
-      <div class="archive-list">
-        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">INCITACIONES PEDAGÓGICAS TRAVESTIS.</a></div>
-        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">MANIFIESTO AL CUERPO INTELIGENTE.</a></div>
-        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">LA FISICALIDAD DE LAS COSAS (DESDE) CON LAS QUE BAILO</a></div>
-        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">MÁS TIERRA ENTRE TANTO CEMENTO</a></div>
-        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">UNA ESPERANZA DESROMANTIZADA ENTRE (UN) PARÉNTESIS EN PARQUE PATRICIOS EN LA CASA (QUE PRONTO SERÁ NAVE ESPACIAL) Y GALPÓN FACE</a></div>
-      </div>
-
-      <!-- FANZINE -->
-      <div class="archive-category">
-        <div class="category-title"><span class="outlook-icon"></span> FANZINE</div>
-      </div>
-      <div class="archive-list">
-        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">DESDANZA DE UNA TRAVESTI EN LA SALA</a></div>
-      </div>
-
-      <!-- CAMPAÑA FOTOGRÁFICA -->
-      <div class="archive-category">
-        <div class="category-title"><span class="outlook-icon"></span> CAMPAÑA FOTOGRÁFICA</div>
-      </div>
-      <div class="archive-list">
-        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">ANGELS IN MEXICO CITY X ROCIO CHACON</a></div>
-        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">OLA DE CALOR - OLA DE COLOR</a></div>
-      </div>
-
-      <!-- ASISTENCIA DE DIRECCIÓN -->
-      <div class="archive-category">
-        <div class="category-title"><span class="outlook-icon"></span> ASISTENCIA DE DIRECCIÓN</div>
-      </div>
-      <div class="archive-list">
-        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">TEORIA DEL HUEVO</a></div>
-        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">ANTRO</a></div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Script para la animación física de las figuras -->
-  <script>
-    const section = document.getElementById('archivo');
-
-    const geoShapes = [
-      { w: 110, h: 110, br: "50%" },
-      { w: 160, h: 70,  br: "50%" },
-      { w: 135, h: 135, br: "50%" },
-      { w: 180, h: 80,  br: "50%" },
-      { w: 90,  h: 90,  br: "50%" },
-      { w: 140, h: 60,  br: "50%" }
-    ];
-
-    const items = [
-      { el: document.getElementById('shape1'), x: 10,  y: 20,  vx: 0.45, vy: 0.35, w: 110, h: 110, shapeIdx: 0 },
-      { el: document.getElementById('shape2'), x: 180, y: 150, vx: -0.35, vy: 0.5,  w: 160, h: 70,  shapeIdx: 1 },
-      { el: document.getElementById('shape3'), x: 80,  y: 350, vx: 0.5,  vy: -0.4, w: 135, h: 135, shapeIdx: 2 }
-    ];
-
-    items.forEach(item => updateShape(item));
-
-    function updateShape(item) {
-      const s = geoShapes[item.shapeIdx];
-      item.w = s.w;
-      item.h = s.h;
-      item.el.style.width = `${s.w}px`;
-      item.el.style.height = `${s.h}px`;
-      item.el.style.borderRadius = s.br;
-    }
-
-    function morphGeometric(item) {
-      let nextIdx;
-      do {
-        nextIdx = Math.floor(Math.random() * geoShapes.length);
-      } while (nextIdx === item.shapeIdx);
-      
-      item.shapeIdx = nextIdx;
-      updateShape(item);
-    }
-
-    function animate() {
-      const rect = section.getBoundingClientRect();
-      const boundsWidth = rect.width;
-      const boundsHeight = rect.height;
-
-      items.forEach(item => {
-        item.x += item.vx;
-        item.y += item.vy;
-
-        let hit = false;
-
-        if (item.x <= 0) {
-          item.x = 0;
-          item.vx *= -1;
-          hit = true;
-        } else if (item.x + item.w >= boundsWidth) {
-          item.x = boundsWidth - item.w;
-          item.vx *= -1;
-          hit = true;
-        }
-
-        if (item.y <= 0) {
-          item.y = 0;
-          item.vy *= -1;
-          hit = true;
-        } else if (item.y + item.h >= boundsHeight) {
-          item.y = boundsHeight - item.h;
-          item.vy *= -1;
-          hit = true;
-        }
-
-        if (hit) {
-          morphGeometric(item);
-        }
-
-        item.el.style.transform = `translate3d(${item.x}px, ${item.y}px, 0)`;
-      });
-
-      requestAnimationFrame(animate);
-    }
-
-    requestAnimationFrame(animate);
-  </script>
-
-</body>
-</html>
+        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><a href="#">SUPER FAN</a></div>
+        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><a href="#">CAMPER</a></div>
+        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><a href="#">EVENTUALMENTE</a></div>
+        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg><a href="#">DANZA TRANS</a></div>
+        <div class="archive-item"><svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.44 11.05
