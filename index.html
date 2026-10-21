@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Lila Timpanar</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;1,400&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;1,400;1,500&display=swap');
 
     html, body {
       margin: 0;
@@ -120,17 +120,16 @@
       object-fit: cover;
     }
 
-    /* Sección Archivo */
+    /* Sección Archivo alineada a la izquierda */
     .archive-section {
       position: relative;
       overflow: hidden;
       background-color: #F2F2F2;
-      padding: 50px 20px 80px 20px;
+      padding: 40px 20px 80px 20px;
       width: 100%;
       box-sizing: border-box;
       display: flex;
       justify-content: center;
-      text-align: center;
     }
 
     .archive-container {
@@ -138,41 +137,96 @@
       width: 100%;
       position: relative;
       z-index: 2;
+      text-align: left; /* Todo alineado a la izquierda */
     }
 
-    .archive-title {
-      font-family: 'Alegreya Sans', sans-serif;
-      font-weight: 400;
-      font-size: 17px;
-      color: #B30033;
-      margin-bottom: 25px;
-      text-transform: lowercase;
+    /* Títulos de Categoría Subrayados */
+    .archive-category {
+      margin-top: 25px;
+      margin-bottom: 12px;
     }
 
-    .archive-links {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      align-items: center;
-    }
-
-    .archive-links a {
+    .category-title {
       font-family: 'Alegreya Sans', sans-serif;
       font-style: italic;
-      font-weight: 400;
-      font-size: 18px;
+      font-weight: 500;
+      font-size: 17px;
       color: #B30033;
       text-decoration: underline;
       text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Ícono desplegable estilo MS Outlook */
+    .outlook-icon {
+      display: inline-block;
+      width: 15px;
+      height: 11px;
+      border: 1.5px solid #B30033;
+      position: relative;
+      background-color: transparent;
+      box-sizing: border-box;
+    }
+
+    .outlook-icon::before {
+      content: '';
+      position: absolute;
+      top: 1px;
+      left: 1px;
+      width: 0;
+      height: 0;
+      border-left: 3px solid transparent;
+      border-right: 3px solid transparent;
+      border-top: 4px solid #B30033;
+    }
+
+    /* Lista de elementos con clip */
+    .archive-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-left: 0;
+      list-style: none;
+      margin: 0;
+    }
+
+    .archive-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .paperclip-icon {
+      font-style: normal;
+      font-size: 16px;
+      color: #B30033;
+      line-height: 1;
+      user-select: none;
+      transition: color 0.2s ease;
+    }
+
+    .archive-item a {
+      font-family: 'Alegreya Sans', sans-serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 16px;
+      color: #B30033;
+      text-decoration: none;
+      text-transform: uppercase;
+      line-height: 1.25;
       word-break: break-word;
       transition: color 0.2s ease;
     }
 
-    .archive-links a:hover {
+    /* Efecto hover en verde flúor para textos e íconos */
+    .archive-item:hover a,
+    .archive-item:hover .paperclip-icon {
       color: #00FF00;
     }
 
-    /* Estilo de las figuras */
+    /* Estilo de las figuras geométricas flotantes */
     .geo-shape {
       position: absolute;
       top: 0;
@@ -190,7 +244,7 @@
     @media (max-width: 480px) {
       header { padding: 8px 10px; }
       .bio-section { padding: 30px 15px 30px 15px; }
-      .archive-section { padding: 40px 15px 60px 15px; }
+      .archive-section { padding: 30px 15px 60px 15px; }
     }
   </style>
 </head>
@@ -237,35 +291,90 @@
     <div class="geo-shape" id="shape3"></div>
 
     <div class="archive-container">
-      <h2 class="archive-title">archivo:</h2>
-      <div class="archive-links">
-        <a href="#">ANGELS IN MEXICO CITY X ROCIO CHACON</a>
-        <a href="#">CAMPAÑA PRIDE MX 2026</a>
-        <a href="#">CAMPER 2026</a>
-        <a href="#">DAJU UNAM</a>
-        <a href="#">DANZA TRANS 2026</a>
-        <a href="#">DESDE Y HACIA EL PISO</a>
-        <a href="#">ETERNO 2026</a>
-        <a href="#">SUPER FAN 2026</a>
-        <a href="#">OLA DE CALOR - OLA DE COLOR</a>
-        <a href="#">REVUELTO CONJUNTIVO 2025</a>
-        <a href="#">SEIDA RETIDA 2025 CABA</a>
+
+      <!-- PROYECTOS -->
+      <div class="archive-category">
+        <div class="category-title"><span class="outlook-icon"></span> PROYECTOS</div>
       </div>
+      <div class="archive-list">
+        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">SEIDA RETIDA</a></div>
+        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">REVUELTO CONJUNTIVO</a></div>
+        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">PUÑAL</a></div>
+      </div>
+
+      <!-- CLASES -->
+      <div class="archive-category">
+        <div class="category-title"><span class="outlook-icon"></span> CLASES</div>
+      </div>
+      <div class="archive-list">
+        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">DESDE Y HACIA EL PISO</a></div>
+        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">ARCHIVOS QUE MUEVEN ESCRITURAS, ESCRITURAS QUE MUEVEN ARCHIVOS</a></div>
+      </div>
+
+      <!-- COLABORACIONES -->
+      <div class="archive-category">
+        <div class="category-title"><span class="outlook-icon"></span> COLABORACIONES</div>
+      </div>
+      <div class="archive-list">
+        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">SUPER FAN</a></div>
+        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">CAMPER</a></div>
+        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">EVENTUALMENTE</a></div>
+        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">DANZA TRANS</a></div>
+        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">CAMPAÑA PRIDE</a></div>
+      </div>
+
+      <!-- PUBLICACIONES DE TEXTO -->
+      <div class="archive-category">
+        <div class="category-title"><span class="outlook-icon"></span> PUBLICACIONES DE TEXTO</div>
+      </div>
+      <div class="archive-list">
+        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">INCITACIONES PEDAGÓGICAS TRAVESTIS.</a></div>
+        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">MANIFIESTO AL CUERPO INTELIGENTE.</a></div>
+        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">LA FISICALIDAD DE LAS COSAS (DESDE) CON LAS QUE BAILO</a></div>
+        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">MÁS TIERRA ENTRE TANTO CEMENTO</a></div>
+        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">UNA ESPERANZA DESROMANTIZADA ENTRE (UN) PARÉNTESIS EN PARQUE PATRICIOS EN LA CASA (QUE PRONTO SERÁ NAVE ESPACIAL) Y GALPÓN FACE</a></div>
+      </div>
+
+      <!-- FANZINE -->
+      <div class="archive-category">
+        <div class="category-title"><span class="outlook-icon"></span> FANZINE</div>
+      </div>
+      <div class="archive-list">
+        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">DESDANZA DE UNA TRAVESTI EN LA SALA</a></div>
+      </div>
+
+      <!-- CAMPAÑA FOTOGRÁFICA -->
+      <div class="archive-category">
+        <div class="category-title"><span class="outlook-icon"></span> CAMPAÑA FOTOGRÁFICA</div>
+      </div>
+      <div class="archive-list">
+        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">ANGELS IN MEXICO CITY X ROCIO CHACON</a></div>
+        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">OLA DE CALOR - OLA DE COLOR</a></div>
+      </div>
+
+      <!-- ASISTENCIA DE DIRECCIÓN -->
+      <div class="archive-category">
+        <div class="category-title"><span class="outlook-icon"></span> ASISTENCIA DE DIRECCIÓN</div>
+      </div>
+      <div class="archive-list">
+        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">TEORIA DEL HUEVO</a></div>
+        <div class="archive-item"><span class="paperclip-icon">📎</span><a href="#">ANTRO</a></div>
+      </div>
+
     </div>
   </section>
 
-  <!-- Script para alternar únicamente entre Círculo Perfecto y Elipse Horizontal -->
+  <!-- Script para la animación física de las figuras -->
   <script>
     const section = document.getElementById('archivo');
 
-    // Catálogo únicamente de círculos perfectos y elipses horizontales
     const geoShapes = [
-      { w: 110, h: 110, br: "50%" }, // Círculo perfecto estándar
-      { w: 160, h: 70,  br: "50%" }, // Elipse horizontal estándar
-      { w: 135, h: 135, br: "50%" }, // Círculo perfecto grande
-      { w: 180, h: 80,  br: "50%" }, // Elipse horizontal ancha
-      { w: 90,  h: 90,  br: "50%" }, // Círculo perfecto chico
-      { w: 140, h: 60,  br: "50%" }  // Elipse horizontal estilizada
+      { w: 110, h: 110, br: "50%" },
+      { w: 160, h: 70,  br: "50%" },
+      { w: 135, h: 135, br: "50%" },
+      { w: 180, h: 80,  br: "50%" },
+      { w: 90,  h: 90,  br: "50%" },
+      { w: 140, h: 60,  br: "50%" }
     ];
 
     const items = [
