@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>SEIDA RETIDA - Lila Timpanar</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100vh;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      background-color: #F2F2F2;
+    }
+
+    /* Encabezado fijo idéntico al sitio principal */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      padding: 10px 12px;
+      box-sizing: border-box;
+      font-family: 'Alegreya Sans', sans-serif;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    .brand {
+      color: #00FF00;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.2s ease;
+    }
+
+    nav {
+      display: flex;
+      gap: 12px;
+    }
+
+    nav a {
+      color: #00FF00;
+      text-decoration: none;
+      text-transform: lowercase;
+      transition: opacity 0.2s ease;
+    }
+
+    nav a:hover, .brand:hover {
+      opacity: 0.7;
+    }
+
+    /* Contenedor principal del proyecto */
+    .project-section {
+      padding: 70px 20px 60px 20px;
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+    }
+
+    .project-container {
+      max-width: 550px;
+      width: 100%;
+      text-align: left;
+    }
+
+    /* Título del proyecto en el mismo formato de archivo */
+    .project-title {
+      font-family: 'Alegreya Sans', sans-serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 17px;
+      color: #B30033;
+      text-decoration: underline;
+      text-transform: uppercase;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 8px 10px;
+      }
+      .project-section {
+        padding: 55px 15px 40px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Encabezado fijo con links de retorno a la home -->
+  <header>
+    <a href="index.html" class="brand">LILA TIMPANAR</a>
+    <nav>
+      <a href="index.html#bio">bio.</a>
+      <a href="index.html#archivo">archivo</a>
+    </nav>
+  </header>
+
+  <!-- Contenido principal del Proyecto -->
+  <main class="project-section">
+    <div class="project-container">
+      <h1 class="project-title">SEIDA RETIDA</h1>
+      
+      <!-- Aquí irán el texto, imágenes o videos del proyecto -->
+    </div>
+  </main>
+
+</body>
+</html>
