@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>REVUELTO CONJUNTIVO - Lila Timpanar</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      min-height: 100vh;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+      background-color: #F2F2F2;
+    }
+
+    /* Encabezado fijo idéntico al sitio principal */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      padding: 10px 12px;
+      box-sizing: border-box;
+      font-family: 'Alegreya Sans', sans-serif;
+      font-weight: 500;
+      font-size: 15px;
+      background-color: rgba(242, 242, 242, 0.95);
+    }
+
+    .brand {
+      color: #00FF00;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: color 0.2s ease;
+    }
+
+    nav {
+      display: flex;
+      gap: 12px;
+    }
+
+    nav a {
+      color: #00FF00;
+      text-decoration: none;
+      text-transform: lowercase;
+      transition: opacity 0.2s ease;
+    }
+
+    nav a:hover, .brand:hover {
+      opacity: 0.7;
+    }
+
+    /* Contenedor principal del proyecto */
+    .project-section {
+      padding: 60px 20px 80px 20px;
+      width: 100%;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+    }
+
+    .project-container {
+      max-width: 550px;
+      width: 100%;
+      text-align: left;
+    }
+
+    /* Encabezado de título con ganchito MS Outlook */
+    .title-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .paperclip-icon {
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      color: #B30033;
+    }
+
+    .project-title {
+      font-family: 'Alegreya Sans', sans-serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 18px;
+      color: #B30033;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    /* Texto informativo en gris */
+    .project-text {
+      font-family: 'Alegreya Sans', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      color: #444444;
+      line-height: 1.5;
+      text-align: left;
+      margin-bottom: 25px;
+    }
+
+    .project-text p {
+      margin: 0 0 14px 0;
+    }
+
+    /* Subtítulo de obra con ícono de autito Segoe MDL2 Assets */
+    .subproject-title-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 25px;
+      margin-bottom: 12px;
+    }
+
+    .car-icon {
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      color: #B30033;
+    }
+
+    .subproject-title {
+      font-family: 'Alegreya Sans', sans-serif;
+      font-style: italic;
+      font-weight: 500;
+      font-size: 17px;
+      color: #B30033;
+      text-decoration: underline;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    /* Galería vertical centrada */
+    .media-gallery {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+      margin-top: 20px;
+      width: 100%;
+    }
+
+    .media-gallery img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .media-gallery img:hover {
+      opacity: 0.9;
+      transform: scale(1.01);
+    }
+
+    /* Reproductor de Video de Google Drive */
+    .video-container {
+      width: 100%;
+      max-width: 550px;
+      aspect-ratio: 16 / 9;
+      background-color: #000000;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Modal / Lightbox para ver fotos en grande */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.88);
+      justify-content: center;
+      align-items: center;
+      cursor: zoom-out;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-img {
+      max-width: 90%;
+      max-height: 90vh;
+      object-fit: contain;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      color: #00FF00;
+      font-size: 28px;
+      font-family: monospace;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    @media (max-width: 480px) {
+      header {
+        padding: 8px 10px;
+      }
+      .project-section {
+        padding: 50px 15px 50px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Encabezado fijo con links de retorno a la home -->
+  <header>
+    <a href="index.html" class="brand">LILA TIMPANAR</a>
+    <nav>
+      <a href="index.html#bio">bio.</a>
+      <a href="index.html#archivo">archivo</a>
+    </nav>
+  </header>
+
+  <!-- Contenido del Proyecto -->
+  <main class="project-section">
+    <div class="project-container">
+
+      <!-- Título principal (18px) a la izquierda con ganchito MS Outlook -->
+      <div class="title-wrapper">
+        <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
+        </svg>
+        <h1 class="project-title">REVUELTO CONJUNTIVO</h1>
+      </div>
+
+      <!-- Texto informativo en gris -->
+      <div class="project-text">
+        <p>colectivo performático compuesto por Aris Chicco, Saluminé Finós, Yos y Lila Timpanar.</p>
+      </div>
+
+      <!-- Subtítulo de la obra con ícono de autito Segoe MDL2 Assets -->
+      <div class="subproject-title-wrapper">
+        <!-- Ícono del vehículo (Segoe MDL2 Assets \uE804) en SVG vectorial -->
+        <svg class="car-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.22.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"/>
+        </svg>
+        <h2 class="subproject-title">ITINERARIO ERRANTE</h2>
+      </div>
+
+      <!-- Video primero y luego las imágenes ordenadas verticalmente -->
+      <div class="media-gallery">
+
+        <!-- Video de Google Drive reproducible directo -->
+        <div class="video-container">
+          <iframe src="https://drive.google.com/file/d/1QGfvfGHTbSAIyKjOTuzrTZUmQAqaqqX2/preview" allow="autoplay" allowfullscreen></iframe>
+        </div>
+
+        <!-- Galería de imágenes en orden -->
+        <img src="ITINERARIO_ERANTE/ITINERARIO01.JPG" alt="ITINERARIO ERRANTE 01" onclick="openLightbox(this.src)">
+        <img src="ITINERARIO_ERANTE/ITINERARIO02.jpg" alt="ITINERARIO ERRANTE 02" onclick="openLightbox(this.src)">
+        <img src="ITINERARIO_ERANTE/ITINERARIO03.jpg" alt="ITINERARIO ERRANTE 03" onclick="openLightbox(this.src)">
+        <img src="ITINERARIO_ERANTE/ITINERARIO04.jpg" alt="ITINERARIO ERRANTE 04" onclick="openLightbox(this.src)">
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Visor / Lightbox para ver las imágenes ampliadas -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" class="lightbox-img" src="" alt="Imagen ampliada">
+  </div>
+
+  <script>
+    function openLightbox(src) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = src;
+      lightbox.classList.add('active');
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.remove('active');
+    }
+  </script>
+
+</body>
+</html>
