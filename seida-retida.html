@@ -32,6 +32,7 @@
       font-family: 'Alegreya Sans', sans-serif;
       font-weight: 500;
       font-size: 15px;
+      background-color: rgba(242, 242, 242, 0.95);
     }
 
     .brand {
@@ -59,7 +60,7 @@
 
     /* Contenedor principal del proyecto */
     .project-section {
-      padding: 70px 20px 60px 20px;
+      padding: 60px 20px 80px 20px;
       width: 100%;
       box-sizing: border-box;
       display: flex;
@@ -72,17 +73,137 @@
       text-align: left;
     }
 
-    /* Título del proyecto en el mismo formato de archivo */
+    /* Encabezado de título con ganchito */
+    .title-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .paperclip-icon {
+      width: 18px;
+      height: 18px;
+      min-width: 18px;
+      color: #B30033;
+    }
+
     .project-title {
       font-family: 'Alegreya Sans', sans-serif;
       font-style: italic;
       font-weight: 500;
-      font-size: 17px;
+      font-size: 18px;
+      color: #B30033;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    /* Texto informativo en gris */
+    .project-text {
+      font-family: 'Alegreya Sans', sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      color: #444444;
+      line-height: 1.5;
+      text-align: left;
+      margin-bottom: 25px;
+    }
+
+    .project-text p {
+      margin: 0 0 14px 0;
+    }
+
+    .subtitle-label {
+      font-weight: 500;
+      margin-top: 15px;
+      display: block;
+    }
+
+    /* Galería vertical centrada */
+    .media-gallery {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+      margin-top: 30px;
+      width: 100%;
+    }
+
+    .media-gallery img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      cursor: pointer;
+      border-radius: 2px;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    .media-gallery img:hover {
+      opacity: 0.9;
+      transform: scale(1.01);
+    }
+
+    /* Marco para video de Instagram */
+    .video-container {
+      width: 100%;
+      max-width: 450px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .instagram-card {
+      width: 100%;
+      background: #FFFFFF;
+      border: 1px solid #DDDDDD;
+      border-radius: 4px;
+      padding: 15px;
+      text-align: center;
+      box-sizing: border-box;
+      font-family: 'Alegreya Sans', sans-serif;
+    }
+
+    .instagram-card a {
       color: #B30033;
       text-decoration: underline;
-      text-transform: uppercase;
-      margin-top: 0;
-      margin-bottom: 20px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    /* Modal / Lightbox para ver fotos en grande */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 100;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.88);
+      justify-content: center;
+      align-items: center;
+      cursor: zoom-out;
+    }
+
+    .lightbox.active {
+      display: flex;
+    }
+
+    .lightbox-img {
+      max-width: 90%;
+      max-height: 90vh;
+      object-fit: contain;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      color: #00FF00;
+      font-size: 28px;
+      font-family: monospace;
+      cursor: pointer;
+      user-select: none;
     }
 
     @media (max-width: 480px) {
@@ -90,14 +211,14 @@
         padding: 8px 10px;
       }
       .project-section {
-        padding: 55px 15px 40px 15px;
+        padding: 50px 15px 50px 15px;
       }
     }
   </style>
 </head>
 <body>
 
-  <!-- Encabezado fijo con links de retorno a la home -->
+  <!-- Encabezado fijo -->
   <header>
     <a href="index.html" class="brand">LILA TIMPANAR</a>
     <nav>
@@ -106,14 +227,72 @@
     </nav>
   </header>
 
-  <!-- Contenido principal del Proyecto -->
+  <!-- Contenido del Proyecto -->
   <main class="project-section">
     <div class="project-container">
-      <h1 class="project-title">SEIDA RETIDA</h1>
-      
-      <!-- Aquí irán el texto, imágenes o videos del proyecto -->
+
+      <!-- Título a la izquierda (18px) con ganchito -->
+      <div class="title-wrapper">
+        <svg class="paperclip-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/>
+        </svg>
+        <h1 class="project-title">SEIDA RETIDA</h1>
+      </div>
+
+      <!-- Texto informativo en gris -->
+      <div class="project-text">
+        <p>CABA, 2025<br>
+        incitaciones deformáticas hacia (para) lxs neocuerpxs. indagaciones entre las prácticas transicionales y (no) dancísticas que intentarán rajar y reinventar eso que algunxs osadxs llaman la naturaleza del cuerpo.</p>
+
+        <span class="subtitle-label">sinopsis:-:</span>
+        <p>he caminado veintiocho dias sin parar. he gritado mi nombre, he vuelto a nacer, he descompuesto mi cuerpo, he muerto bailando...</p>
+
+        <span class="subtitle-label">ficha técnica:-:</span>
+        <p>#direccion y deformance: Lila Timpanar<br>
+        #asistencia de dirección graficas y registros: @juuuuliete @yosjulieta<br>
+        #edición y montaje sonoro: @sxpf9</p>
+      </div>
+
+      <!-- Fotos y Videos centrados y apilados -->
+      <div class="media-gallery">
+
+        <!-- Fotos ampliables -->
+        <img src="seida retida 2025 CABA/SEIDA01.jpg" alt="SEIDA RETIDA 01" onclick="openLightbox(this.src)">
+        <img src="seida retida 2025 CABA/SEIDA02.HEIC" alt="SEIDA RETIDA 02" onclick="openLightbox(this.src)">
+        <img src="seida retida 2025 CABA/SEIDA03.jpg" alt="SEIDA RETIDA 03" onclick="openLightbox(this.src)">
+
+        <!-- Video de Instagram -->
+        <div class="video-container">
+          <div class="instagram-card">
+            <p style="margin: 0 0 8px 0; color: #555; font-size: 13px;">Registro en Video (Instagram Reel):</p>
+            <a href="https://www.instagram.com/reel/DQH9dXPj7WI/?stkn=MWhhdjgwcHg5Y3V6dg%3D%3D" target="_blank" rel="noopener"> Ver Reel de SEIDA RETIDA ↗</a>
+          </div>
+        </div>
+
+      </div>
+
     </div>
   </main>
+
+  <!-- Visor / Lightbox para ver la imagen ampliada -->
+  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightbox-img" class="lightbox-img" src="" alt="Imagen ampliada">
+  </div>
+
+  <script>
+    function openLightbox(src) {
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      lightboxImg.src = src;
+      lightbox.classList.add('active');
+    }
+
+    function closeLightbox() {
+      const lightbox = document.getElementById('lightbox');
+      lightbox.classList.remove('active');
+    }
+  </script>
 
 </body>
 </html>
