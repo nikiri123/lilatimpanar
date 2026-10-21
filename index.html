@@ -56,18 +56,22 @@
     }
 
     /* Imagen principal de fondo */
+/* Sección GIF principal: escala proporcionalmente sin recortes */
     .hero-section {
-     width: 100%;
-      height: 100vh;
-      max-height: 100vw; /* Ajusta la altura máxima a la proporción de la pantalla */
-      background-image: url('fondo.gif');
-      background-size: contain;
-      background-position: center top;
-      background-repeat: no-repeat;
-      background-color: #F2F2F2;
+      width: 100%;
+      display: block;
+      margin: 0;
+      padding: 0;
     }
 
-    /* Sección Bio */
+    .hero-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    /* Sección Bio: */
     .bio-section {
       background-color: #F2F2F2;
       padding: 15px 20px 40px 20px;
@@ -76,7 +80,6 @@
       display: flex;
       justify-content: center;
     }
-
     .bio-container {
       max-width: 550px;
       width: 100%;
